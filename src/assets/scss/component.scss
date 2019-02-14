@@ -1,0 +1,15 @@
+/* 아이콘 공통 */
+@each $iconName,$iconSize,$posX,$posY in $nav-icon {
+  .nav__#{$iconName} {
+    width:$iconSize;
+    height:$iconSize;
+    background-position:$posX + px $posY + px;
+    &:hover {
+      background-position: -($posX+30) + px $posY + px;
+    }
+    &.nav__#{$iconName}__on {
+      background-position:-($posX+30) + px $posY + px;
+    }
+  }
+
+}
