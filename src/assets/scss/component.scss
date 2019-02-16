@@ -1,15 +1,77 @@
-/* 아이콘 공통 */
-@each $iconName,$iconSize,$posX,$posY in $nav-icon {
-  .nav__#{$iconName} {
-    width:$iconSize;
-    height:$iconSize;
-    background-position:$posX + px $posY + px;
-    &:hover {
-      background-position: -($posX+30) + px $posY + px;
+
+//메뉴 아이콘
+$nav-icon :
+    (all,25px),
+    (animation,25px),
+    (banner,25px),
+    (etc,25px),
+    (flow,25px),
+    (navigation,25px),
+    (page,25px),
+    (reference,25px),
+    (scroll,25px),
+    (splash,25px),
+    (states,25px),
+    (component,25px);
+
+
+/* 메뉴 */
+@each $iconName,$iconSize in $nav-icon {
+  .nav-wrap {
+    .icon-#{$iconName} {
+      display:inline-block;
+      width:$iconSize;
+      height:$iconSize;
+      margin-right:13px;
+      background-image:url('http://localhost:8080/src/assets/images/ic-left-' + $iconName + '-off@2x.png');
+      background-size:$iconSize $iconSize;
+      background-repeat:no-repeat;
+      vertical-align:top;
     }
-    &.nav__#{$iconName}__on {
-      background-position:-($posX+30) + px $posY + px;
+    .link-nav:hover {
+      .icon-#{$iconName} {
+        background-image:url('http://localhost:8080/src/assets/images/ic-left-' + $iconName + '-on@2x.png');
+      }
+    }
+    .on {
+      .link-nav {
+        .icon-#{$iconName} {
+          background-image: url('http://localhost:8080/src/assets/images/ic-left-' + $iconName + '-active@2x.png');
+        }
+      }
     }
   }
-
+}
+.nav-wrap {
+  padding-left:40px;
+  li {
+    margin-bottom:10px;
+    &.on {
+      .title-cate,.count-cate {
+        font-weight:bold;
+      }
+      .title-cate {
+        color:#0021ff;
+      }
+    }
+  }
+  .link-nav {
+    display:block;
+    font-size:13px;
+    line-height:25px;
+    color:#333;
+    &:hover {
+      font-weight:bold;
+      text-decoration: none;
+      .title-cate {
+        font-weight:bold;
+      }
+    }
+  }
+  .title-cate {
+    font-weight:normal;
+  }
+  .count-cate {
+    color:#9b9b9b
+  }
 }
