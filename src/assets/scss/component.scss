@@ -13,6 +13,14 @@ $nav-icon :
     (splash,25px),
     (states,25px),
     (component,25px);
+//메뉴 아이콘
+$tool-icon :
+    (framer,24px),
+    (framerx,24px),
+    (lottie,24px),
+    (principle,24px),
+    (sketch,24px),
+    (HTML,24px);
 
 
 /* 메뉴 */
@@ -42,36 +50,42 @@ $nav-icon :
     }
   }
 }
-.nav-wrap {
-  padding-left:40px;
-  li {
-    margin-bottom:10px;
-    &.on {
-      .title-cate,.count-cate {
-        font-weight:bold;
-      }
-      .title-cate {
-        color:#0021ff;
-      }
-    }
+
+//tool 메뉴
+@each $toolName,$toolSize in $tool-icon {
+  .icon-#{$toolName} {
+    display:inline-block;
+    width:$toolSize;
+    height:$toolSize;
+    margin-right:13px;
+    background-image:url('http://localhost:8080/src/assets/images/ic-' + $toolName + '@2x.png');
+    background-size:$toolSize $toolSize;
+    background-repeat:no-repeat;
+    vertical-align:top;
   }
-  .link-nav {
-    display:block;
-    font-size:13px;
-    line-height:25px;
-    color:#333;
-    &:hover {
-      font-weight:bold;
-      text-decoration: none;
-      .title-cate {
-        font-weight:bold;
-      }
-    }
+}
+
+
+
+//태그 모듈
+.link-tag {
+  display:block;
+  padding:0 12px;
+  font-size:10px;
+  line-height:22px;
+  color:#eee;
+  border:1px solid #eee;
+  box-sizing:border-box;
+  border-radius:22px;
+  transition:all .15s;
+  &:hover {
+    color:#7148e9;
+    border-color:#7148e9;
+    text-decoration: none;
   }
-  .title-cate {
-    font-weight:normal;
-  }
-  .count-cate {
-    color:#9b9b9b
+  &:active {
+    background:#7148e9;
+    color:#fff;
+    transition:none;
   }
 }
