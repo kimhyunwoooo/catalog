@@ -9,9 +9,9 @@ input::-ms-clear{display:none}
 button{border:0 none;background-color:transparent;cursor:pointer}
 body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'Open Sans',sans-serif;letter-spacing:-0.025em;color:#333}
 a{color:#333;text-decoration:none}
-a:active, a:hover{text-decoration:underline}
+a:active, a:hover{text-decoration:none}
 a:active{background-color:transparent}
-address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+address,caption,cite,code,dfn,em,var,strong{font-style:normal;font-weight:normal}
 caption{overflow:hidden;left:-9999px;width:0.01em;height:0.01em;font-size:0.01em;line-height:0.01em}
 
 /* global */
