@@ -15,7 +15,7 @@ html,body {
   font-weight:normal;
   font-size:13px;
   line-height:25px;
-  color:#333;
+  color:$gray90;
 }
 
 //메뉴
@@ -32,7 +32,7 @@ html,body {
         font-weight:bold;
       }
       .title-cate {
-        color:#0021ff;
+        color:$primary;
       }
     }
   }
@@ -49,7 +49,7 @@ html,body {
     }
   }
   .count-cate {
-    color:#9b9b9b
+    color:$gray45;
   }
 }
 
@@ -66,7 +66,7 @@ html,body {
     width:180px;
     height:1px;
     margin-left:-10px;
-    background:#eee;
+    background:$gray20;
     content:'';
   }
 }
@@ -106,7 +106,7 @@ html,body {
     font-size:14px;
     font-weight:700;
     line-height:24px;
-    color:#b3b3b3;
+    color:$gray40;
   }
   .nav-tag {
     font-size:0;
@@ -133,11 +133,15 @@ $nav-height: 240;
   box-sizing:border-box;
   box-shadow:5px 0px 30px 3px rgba(0,0,0,0.03);
   transition:width .3s, padding-left .1s;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+  display:none;
+  }
   &.side__close {
     width:72px;
     padding-left:23px;
     box-shadow:none;
-    border-right:1px solid #eee;
+    border-right:1px solid $gray20;
     transition:padding .2s;
     .title-logo {
       left:-10px;
@@ -154,7 +158,7 @@ $nav-height: 240;
       display:none
     }
     .btn-fold {
-      background:#0021ff;
+      background:$primary;
       .icon-fold {
         background:url('http://localhost:8080/src/assets/images/ic-menu@2x.png') no-repeat;
         background-size:24px;
@@ -247,7 +251,7 @@ $nav-height: 240;
   .link-type {
     display:block;
     margin-right:5px;
-    color:#0021ff;
+    color:$primary;
     opacity:0.29;
     font-size:13px;
     font-weight:700;
@@ -285,14 +289,14 @@ $nav-height: 240;
   .bar_menu {
     position:absolute;
     top:31px;
-    background:#0021ff;
+    background:$primary;
   }
   .inner_bar {
     position:absolute;
     top:0;
     left:0;
     height:3px;
-    background:#0021ff;
+    background:$primary;
   }
   .list-tab {
     width:100%;
@@ -304,15 +308,14 @@ $nav-height: 240;
       margin:0 12px;
       &.on {
         .link-tab {
-          color:#000;
+          color:$ink;
           font-weight:bold;
         }
       }
     }
     .link-tab {
-      font-size:16px;
+      @include head-lv3;
       line-height:24px;
-      color:#b3b3b3;
       padding:0 2px;
     }
   }
@@ -323,9 +326,7 @@ $nav-height: 240;
 // 목록 리스트
 .title-sub {
   margin-bottom:40px;
-  font-size:24px;
-  line-height:30px;
-  letter-spacing:-0.5px;
+  @include head-lv2;
 }
 .list-item {
   width:1040px;
@@ -381,11 +382,11 @@ $nav-height: 240;
     font-weight:700;
     border-radius:4px;
     box-sizing:border-box;
-    border:1px solid #0021FF;
-    color:#0021FF;
+    border:1px solid $primary;
+    color:$primary;
     transition:background .2s , color .2s;
     &:hover {
-      background:#0021FF;
+      background:$primary;
       color:#fff
     }
   }
@@ -402,23 +403,24 @@ $nav-height: 240;
     color:$color;
   }
   .text-cate {
-    @include font-style-item(block,16px,22px,#0021FF,bold);
+    @include font-style-item(block,16px,22px,$primary,bold);
   }
   .title-item {
-    @include font-style-item(block,32px,36px,#000,700);
+    @include font-style-item(block,32px,36px,$ink,700);
     padding-bottom:14px;
+    letter-spacing:-1px;
   }
   .text-desc {
     word-break: keep-all;
-    @include font-style-item(block,11px,14px,#4a4a4a,normal);
+    @include font-style-item(block,11px,14px,$gray80,normal);
     padding-bottom:26px;
   }
   .text-type {
-    @include font-style-item(block,11px,14px,#b3b3b3,normal);
+    @include font-style-item(block,11px,14px,$gray40,normal);
     padding-bottom:5px;
   }
   .link-example {
-    @include font-style-item(inline-block,10px,14px,#9b9b9b,normal);
+    @include font-style-item(inline-block,10px,14px,$gray45,normal);
     padding-bottom:13px;
   }
   .wrap-tag {
@@ -491,5 +493,74 @@ $view-size__height:210px;
     .link-example {
       padding:10px 0 0 0;
     }
+  }
+}
+
+
+
+// 업데이트
+.section-update {
+  .title-sub {
+    @include head-lv1;
+  }
+  .desc-sub {
+    @include head-lv5;
+    margin:24px 0;
+  }
+  .list-update {
+    padding-top:24px;
+    border-top:1px solid $gray20;
+    border-bottom:1px solid $gray20;
+    min-height:504px;
+    > li {
+      overflow:hidden;
+      position:relative;
+      padding:0 100px 16px 74px;
+    }
+    .head-list {
+      position:absolute;
+      top:0;
+      left:0;
+      width:24px;
+      height:24px;
+      padding:4px;
+      >img {
+        display:block;
+        vertical-align: top;
+        widht:24px;
+        height:24px;
+      }
+    }
+    .foot-list {
+      position:absolute;
+      right:16px;
+      top:0;
+      font-size:12px;
+      line-height:32px;
+      color:$gray45;
+    }
+    .body-list {
+      .title-update {
+        display:block;
+        overflow:hidden;
+        width:100%;
+        font-size:14px;
+        line-height:32px;
+        color:$ink;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-break: break-word;
+      }
+    }
+  }
+}
+
+.section-copyright {
+  margin-top:45px;
+  text-align:center;
+  > small {
+    font-size:12px;
+    line-height:16px;
+    color:#ccc;
   }
 }

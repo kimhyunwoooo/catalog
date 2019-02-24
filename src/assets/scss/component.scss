@@ -73,18 +73,18 @@ $tool-icon :
   padding:0 12px;
   font-size:10px;
   line-height:22px;
-  color:#eee;
-  border:1px solid #eee;
+  color:$gray20;
+  border:1px solid $gray20;
   box-sizing:border-box;
   border-radius:22px;
   transition:all .15s;
   &:hover {
-    color:#7148e9;
-    border-color:#7148e9;
+    color:$secondary;
+    border-color:$secondary;
     text-decoration: none;
   }
   &:active {
-    background:#7148e9;
+    background:$secondary;
     color:#fff;
     transition:none;
   }

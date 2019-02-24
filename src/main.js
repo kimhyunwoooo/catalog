@@ -1,3 +1,5 @@
+import './assets/scss/catalog.scss';
+
 import Vue from 'vue'
 import App from './App.vue'
 import 'expose-loader?$!expose-loader?jQuery!jquery'
@@ -7,7 +9,6 @@ new Vue({
   render: h => h(App)
 })
 
-import './assets/scss/catalog.scss';
 
 //메뉴 열기닫기
 var sidebarController = document.querySelector('.btn-fold');
