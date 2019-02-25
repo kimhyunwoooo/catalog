@@ -1,3 +1,4 @@
+var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -17,21 +18,31 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
-      },
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
-      },
-      {
-        test: /\.sass$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+              },
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                ident: 'postcss',
+                sourceMap: 'inline',
+                plugins: [ require('autoprefixer') ]
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: false,
+                sourceMapContents: false,
+                outputStyle: 'compressed',
+                includePaths: ['./node_modules']
+              },
+            }
+          ]
         })
       },
       {
@@ -52,8 +63,8 @@ module.exports = {
               'css-loader',
               'sass-loader?indentedSyntax'
             ]
-          }
-          // other vue-loader options go here
+          },
+          extractCSS: true
         }
       },
       {
@@ -73,11 +84,12 @@ module.exports = {
   plugins: [
     new cleanWebpackPlugin(['./dist']),
     new ExtractTextPlugin({
-      filename: 'style.css'
+      filename: './assets/scss/catalog.css',
+      disable:false
     }),
     new HtmlWebpackPlugin({
-      title:'hello',
-      template: './index.html'
+      filename: './index.html', // 빌드후 만들어지는 파일이명
+      template: './src/index.html' // 빌드시 사용되는 템플릿
     }),
   ],
   resolve: {
@@ -94,26 +106,5 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
-}
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ])
+  devtool: 'inline-source-map'
 }

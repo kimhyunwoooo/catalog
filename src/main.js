@@ -1,4 +1,4 @@
-import './assets/scss/catalog.scss';
+require('./assets/scss/catalog.scss');
 
 import Vue from 'vue'
 import App from './App.vue'
@@ -11,11 +11,11 @@ new Vue({
 
 
 //메뉴 열기닫기
-var sidebarController = document.querySelector('.btn-fold');
-var sidebarPanel =  document.querySelector('.section-sidebar');
-sidebarController.addEventListener('click',function(){
-  sidebarPanel.classList.toggle("side__close");
-})
+// var sidebarController = document.querySelector('.btn-fold');
+// var sidebarPanel =  document.querySelector('.section-sidebar');
+// sidebarController.addEventListener('click',function(){
+//   sidebarPanel.classList.toggle("side__close");
+// })
 
 
 // GNB Bar 애니메이션
