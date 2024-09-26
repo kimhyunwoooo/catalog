@@ -1,0 +1,113 @@
+/*
+    abstract.scss
+*/
+
+/** << placeholder >> **/
+/* [ float 해제 ] */
+%clearFix {
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+}
+
+/* [ 접근성 - 숨김텍스트 지원시 ] */
+@mixin screenOut {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+/* [ 접근성 - 의미있는 이미지의 대체텍스트 지원시 ] */
+@mixin screenSkip {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+/** << mixin >> **/
+/* [ 한줄 말줄임 ] */
+@mixin LineLoss {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-word;
+}
+
+/* [ 여러줄 말줄임 ] */
+@mixin multiLoss($lineCount) {
+    display: block;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: $lineCount;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+
+/* [ 폰트 기본셋 ] */
+@mixin fontSet($fontSize, $fontWeight, $lineHeight, $color) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+    color: $color;
+}
+
+/* [ 버튼 공통 ] */
+@mixin btnCommon($width: 100%, $height: 56px, $background: #468ed3, $borderColor: #468ed3, $color: #fff, $fontSize: 17px, $radius: 50%) {
+    display: block;
+    width: $width;
+    height: $height;
+    background: $background;
+    text-align: center;
+    border-radius: $radius;
+    border: setResMo(1px) solid $borderColor;
+    box-sizing: border-box;
+    @include fontSet($fontSize, 500, $height, $color);
+}
+
+/* [ 애니메이션 ] */
+@mixin AnimationSet($name, $duration, $count, $direction, $delay, $mode, $easing) {
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-iteration-count: $count;
+    animation-direction: $direction;
+    animation-delay: $delay;
+    animation-fill-mode: $mode;
+    animation-timing-function: $easing;
+}
+
+@mixin imageBg($name) {
+    background : {
+        image: url('#{$imagePath}/#{$name}');
+        repeat: no-repeat;
+        size: contain;
+        position: 50% 50%;
+    }
+}
+
+@mixin animationFadeDown {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: 0.1s;
+}
+
+@mixin animationFadeUp {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.1s;
+}
+
+@mixin animationOrigin($delay) {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: $delay;
+}

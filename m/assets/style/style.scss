@@ -1,0 +1,22 @@
+/*
+    style.scss
+*/
+
+// abstract
+@import './scss/variable';
+@import './scss/abstract';
+
+// common
+@import './scss/reset';
+@import './scss/font';
+@import './scss/animation';
+@import './scss/layout';
+
+// page
+@import './scss/header';
+@import './scss/index';
+@import './scss/footer';
+@import './scss/modal';
+
+// vendor
+@import './scss/vendor/swiper.min.css';

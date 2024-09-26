@@ -1,0 +1,277 @@
+/*
+    _modal.scss
+*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.8);
+
+    .modal__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        overflow-y: auto;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s, transform 0.5s;
+    }
+
+    &--artist {
+        z-index: 98;
+
+        .artist {
+            &-detail {
+                max-width: $maxWidth;
+                padding: setResMo(80px) 0 setResMo(20px);
+            }
+            &-item {
+                @for $i from 1 through length($artistList) {
+                    $name: nth($artistList, $i);
+
+                    &--#{$name} {
+                        .video {
+                            background-image: url('#{$imagePath}/artist/#{$name}-video.jpg');
+                        }
+                        .name {
+                            background-image: url('#{$imagePath}/artist/#{$name}-name.svg');
+                        }
+                    }
+                }
+            }
+            &-frame {
+                position: relative;
+                width: setResMo(340px);
+                height: setResMo(627px);
+                margin: 0 auto;
+                padding-top: setResMo(16px);
+                box-sizing: border-box;
+                @include imageBg('frame-artist.svg');
+            }
+
+            &-video {
+                overflow: hidden;
+                position: relative;
+                width: setResMo(258px);
+                height: setResMo(323px);
+                margin: 0 auto setResMo(12px);
+                border-radius: setResMo(12px);
+                background: #1d242d;
+                box-sizing: border-box;
+                border: 2px solid #1d242d;
+
+                .video {
+                    width: 100%;
+                    height: 100%;
+                    background: {
+                        size: cover;
+                        repeat: no-repeat;
+                        position: 50% 50%;
+                    }
+                }
+                video {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    opacity: 1;
+                    transition: opacity 0.25s;
+                }
+            }
+
+            &-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: setResMo(258px);
+                height: setResMo(260px);
+                margin: 0 auto;
+                border-radius: setResMo(12px);
+                background: #fff;
+                border: 2px solid #5c9cd8;
+                box-sizing: border-box;
+                .name {
+                    display: block;
+                    width: 100%;
+                    height: setResMo(22px);
+                    margin-bottom: setResMo(8px);
+                    background: {
+                        size: contain;
+                        repeat: no-repeat;
+                        position: 50% 50%;
+                    }
+                }
+                .msg {
+                    display: block;
+                    width: 100%;
+                    @include fontSet(setResMo(13px), 500, setResMo(20px), #468ed3);
+                    letter-spacing: -0.02em;
+                    text-align: center;
+                }
+                > .text {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: setResMo(82px);
+                    margin-bottom: setResMo(8px);
+                    @include fontSet(setResMo(14px), 600, setResMo(22px), #3d4c5e);
+                    letter-spacing: -0.02em;
+                    text-align: center;
+                }
+                .download-store {
+                    display: none;
+                    width: setResMo(195px);
+                    height: setResMo(60px);
+                    box-sizing: border-box;
+                    border-radius: setResMo(6px);
+                    background: rgba(0, 0, 0, 0.9);
+
+                    &--google {
+                        border: setResMo(1px) solid #027948;
+                    }
+
+                    &--app {
+                        border: setResMo(1px) solid #468ed3;
+                    }
+
+                    .btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        .google {
+                            display: block;
+                            width: setResMo(152px);
+                            height: setResMo(45px);
+                            margin-left: setResMo(18px);
+                            @include imageBg('icon-google-type2.svg');
+                        }
+                        .app {
+                            display: block;
+                            width: setResMo(140px);
+                            height: setResMo(43px);
+                            margin-left: setResMo(19px);
+                            @include imageBg('icon-app-type2.svg');
+                            .text {
+                                left: setResMo(62px);
+                            }
+                        }
+
+                        .text {
+                            position: absolute;
+                            top: setResMo(6px);
+                            left: setResMo(61px);
+                            @include fontSet(setResMo(13px), 600, setResMo(20px), #fff);
+                        }
+                    }
+                }
+            }
+        }
+
+        .swiper-nav__link {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            z-index: 100;
+            width: setResMo(40px);
+            height: 100%;
+            > span {
+                display: block;
+                width: setResMo(15px);
+                height: setResMo(28px);
+                @include imageBg('icon-arrow.svg');
+            }
+
+            &--next {
+                right: 0;
+                transform: rotate(180deg);
+            }
+            &--prev {
+                left: 0;
+            }
+        }
+
+        .modal-close__btn {
+            position: absolute;
+            top: setResMo(65px);
+            right: setResMo(20px);
+            z-index: 100;
+            width: setResMo(50px);
+            height: setResMo(50px);
+        }
+    }
+    //.modal--artist
+
+    &--alert {
+        z-index: 100;
+        .alert {
+            width: setResMo(340px);
+            padding: setResMo(24px);
+            box-sizing: border-box;
+            background: #fff;
+            border-radius: setResMo(12px);
+
+            .alert__msg {
+                padding: setResMo(13px) 0;
+                margin-bottom: setResMo(16px);
+                @include fontSet(setResMo(17px), 600, setResMo(30px), #27272a);
+                text-align: center;
+            }
+
+            .btn-confirm {
+                @include btnCommon(100%, setResMo(56px), #468ed3, #468ed3, #fff, setResMo(16px), setResMo(56px/2));
+            }
+        }
+    }
+    //.modal--alert
+
+    &--ended {
+        z-index: 100;
+        .ended {
+            width: setResMo(340px);
+            padding: setResMo(24px);
+            box-sizing: border-box;
+            background: #fff;
+            border-radius: setResMo(12px);
+
+            .alert__msg {
+                padding: setResMo(13px) 0;
+                margin-bottom: setResMo(16px);
+                @include fontSet(setResMo(17px), 600, setResMo(30px), #27272a);
+                text-align: center;
+            }
+
+            .btn-confirm {
+                display: none;
+            }
+        }
+        .btn-confirm {
+            @include btnCommon(100%, setResMo(56px), #468ed3, #468ed3, #fff, setResMo(16px), setResMo(56px/2));
+        }
+    }
+    //.modal--ended
+
+    &--on {
+        width: 100%;
+        height: 100%;
+        .modal__container {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}

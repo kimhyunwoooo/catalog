@@ -1,0 +1,145 @@
+/* _reset.scss */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+textarea,
+p,
+blockquote,
+th,
+td,
+input,
+select,
+button {
+    margin: 0;
+    padding: 0;
+}
+fieldset,
+img {
+    border: 0 none;
+}
+dl,
+ul,
+ol,
+menu,
+li {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+body,
+th,
+td,
+input,
+select,
+textarea,
+button {
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: 'AppleGothicNeoSD', 'Apple SD 산돌고딕 Neo', 'Microsoft NeoGothic', 'Droid sans', 'sans-serif';
+    color: #333;
+    letter-spacing: -0.05em;
+}
+input,
+select,
+textarea,
+button {
+    vertical-align: middle;
+}
+input::-ms-clear {
+    display: none;
+}
+button {
+    border: 0 none;
+    background-color: transparent;
+    cursor: pointer;
+}
+a,
+button {
+    color: #333;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+a:active,
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    background-color: transparent;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+caption {
+    overflow: hidden;
+    left: -9999px;
+    width: 0.01em;
+    height: 0.01em;
+    font-size: 0.01em;
+    line-height: 0.01em;
+}
+.skip {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+input {
+    appearance: none;
+}
+input::-ms-clear {
+    display: none;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    appearance: none;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+body {
+    font-size: 0;
+    background: #000;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}

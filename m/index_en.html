@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="We invite you now to the rhythm game with WAKEONE." />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <!-- openGraph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="SUPERSTAR WAKEONE!" />
+        <meta property="og:description" content="We invite you now to the rhythm game with WAKEONE." />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <!-- twitter -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="SUPERSTAR WAKEONE!" />
+        <meta name="twitter:description" content="We invite you now to the rhythm game with WAKEONE." />
+        <meta name="twitter:image" content="" />
+        <meta name="twitter:domain" content="" />
+        <title>SUPERSTAR WAKEONE!</title>
+        <link rel="shortcut icon" href="" />
+        <link href="./assets/style/index.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./assets/script/vendor/clipboard.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+            // 스토어 링크 맵핑
+            let storeLink = {
+                app: 'https://www.apple.com/kr/app-store/',
+                google: 'https://play.google.com/store/games?hl=ko'
+            };
+            // 보상 단계 설정 [ 1~5 ]
+            let setRewardStep = 2;
+        </script>
+        <script type="text/javascript" src="./assets/script/index.js"></script>
+    </head>
+
+    <body>
+        <div id="wakeoneHome" class="wakeone-home">
+            <header role="banner" class="header">
+                <div class="header__wrap">
+                    <h1 class="header__logo">
+                        <a href="javascript:void(0);" class="header-logo__link">
+                            <img src="./assets/images/img-logo-wakeone.svg" alt="SUPER STAR WAKEONE" />
+                        </a>
+                    </h1>
+                    <div class="header__util">
+                        <div class="header__util--lang">
+                            <a href="javascript:void(0);" role="button" class="lang__link">
+                                <span class="skip">language select</span>
+                            </a>
+                            <div class="select-lang">
+                                <ul class="lang__list">
+                                    <!-- memo - html 태그의 lang 속성에 따라 활성화 표시됨 -->
+                                    <li class="lang__item" data-lang="ko">
+                                        <a href="index.html"> KOR </a>
+                                    </li>
+                                    <li class="lang__item" data-lang="ja">
+                                        <a href="index_ja.html"> JPN </a>
+                                    </li>
+                                    <li class="lang__item" data-lang="en">
+                                        <a href="index_en.html"> ENG </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="header__util--menu">
+                            <a href="javascript:void(0);" class="menu-open__link">
+                                <span class="skip">menu open</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- // .header__wrap -->
+
+                <div class="header__menu">
+                    <div class="menu__wrap">
+                        <h2 class="menu__logo">
+                            <a href="#wakeoneHome" class="menu-logo__link">
+                                <img src="./assets/images/img-logo-wakeone.svg" alt="SUPER STAR WAKEONE" />
+                            </a>
+                        </h2>
+
+                        <nav id="gnb" class="menu__gnb">
+                            <ul class="gnb__list">
+                                <li class="gnb__item">
+                                    <a href="#sectionArtist">
+                                        <span class="text">Artist</span>
+                                    </a>
+                                </li>
+                                <li class="gnb__item">
+                                    <a href="#sectionPreorder">
+                                        <span class="text">Pre-order Rewards</span>
+                                    </a>
+                                </li>
+                                <li class="gnb__item">
+                                    <a href="#sectionSocial">
+                                        <span class="text">SNS Event</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="menu__social">
+                            <ul class="social__list">
+                                <li class="social__item">
+                                    <a href="#" class="sns__link sns__link--tw">
+                                        <span class="skip">X</span>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="#" class="sns__link sns__link--in">
+                                        <span class="skip">instagram</span>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="#" class="sns__link sns__link--yt">
+                                        <span class="skip">youtube</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <small class="social__copyright">Copyright© 2024 DALCOMSOFT. All rights reserved.</small>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0);" class="gnb-close__link">
+                        <span class="icon-menu-close">menu close</span>
+                    </a>
+                </div>
+                <!-- // .header__menu -->
+            </header>
+            <!-- // .header -->
+
+            <div class="contents">
+                <div class="background">
+                    <div class="bg-video">
+                        <video id="videoMain" class="video" playsinline loop muted></video>
+                    </div>
+                    <div class="bg-scroll">
+                        <span class="skip">scroll down</span>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="section section--visual">
+                        <div class="visual-head"></div>
+                        <div class="visual-main">
+                            <h2>
+                                <img src="./assets/images/img-logo-wakeone.svg" alt="SUPER STAR WAKEONE" />
+                            </h2>
+                            <h3>Join the pre-order now!</h3>
+                            <div class="store-btn__wrap">
+                                <!-- memo - storeLink 변수를 통하여 각 스토어별 자동 링크값 설정 -->
+                                <a href="#" target="_blank" class="download-store download-store--google" data-store="google">
+                                    <span class="btn">
+                                        <span class="google">Google Play</span>
+                                        <span class="text">Pre-register</span>
+                                    </span>
+                                </a>
+                                <a href="#" target="_blank" class="download-store download-store--app" data-store="app">
+                                    <span class="btn">
+                                        <span class="app">App Store</span>
+                                        <span class="text">Pre-register</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="visual-scroll">
+                            <span class="skip">scroll down</span>
+                        </div>
+                    </div>
+                    <div id="sectionArtist" class="section section--artist">
+                        <div class="artist-wrap">
+                            <h3 class="section__title">Artist</h3>
+                            <p class="section__sub-title">WELCOME SUPERSTAR WAKEONE</p>
+                            <p class="section__text">Check out ZEROBASEONE's<br />special message!</p>
+                            <em>Congratulations messages are revealed daily at 2 PM<br />KST, one by one.</em>
+                            <ul class="artist__list">
+                                <li>
+                                    <!-- memo - button 태그에 disabled 속성이 제거 되면 활성화 -->
+                                    <button type="button" data-artist="hanbin" class="artist__link artist__link--hanbin">
+                                        <strong class="skip">SUNG HAN BIN</strong>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-artist="jiwoong" class="artist__link artist__link--jiwoong">
+                                        <strong class="skip">KIM JI WOONG</strong>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-artist="hao" class="artist__link artist__link--hao">
+                                        <strong class="skip">ZHANG HAO</strong>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-artist="matthew" class="artist__link artist__link--matthew">
+                                        <strong class="skip">SEOK MATTHEW</strong>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-artist="taerae" class="artist__link artist__link--taerae">
+                                        <strong class="skip">KIM TAE RAE</strong>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-artist="ricky" class="artist__link artist__link--ricky" disabled>
+                                        <strong class="skip">RICKY</strong>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-artist="gyuvin" class="artist__link artist__link--gyuvin" disabled>
+                                        <strong class="skip">KIM GYU VIN</strong>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-artist="gunwook" class="artist__link artist__link--gunwook" disabled>
+                                        <strong class="skip">PARK GUN WOOK</strong>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" data-artist="yujin" class="artist__link artist__link--yujin" disabled>
+                                        <strong class="skip">HAN YU JIN</strong>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="sectionGroup" class="section section--group">
+                        <img src="./assets/images/img-group.jpg" alt="ZEROBASEONE" />
+                    </div>
+                    <div id="sectionPreorder" class="section section--preorder">
+                        <h3 class="section__title">Pre-order Rewards</h3>
+                        <p class="section__text">
+                            Claim rewards based on<br />
+                            pre-registration count!
+                        </p>
+                        <div class="preorder__wrap">
+                            <div class="preorder-reward">
+                                <div class="reward-item">
+                                    <img src="./assets/images/img-reward.jpg" alt="OPEN CELEBRATION Limited Wallpaper" />
+                                    <div class="info">
+                                        <h4>100% reward for pre-registration</h4>
+                                        <p>OPEN CELEBRATION Limited Wallpaper</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="preorder-reward__list">
+                                <!-- memo - 달성시 complete 클래스 추가-->
+                                <li>
+                                    <div class="reward-item">
+                                        <strong>Upon reaching<br />10,000 participants</strong>
+                                        <div class="bg">
+                                            <img src="./assets/images/img-reward-1.jpg" alt="Diamonds 50" />
+                                        </div>
+                                        <p>50<br />Diamonds</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reward-item">
+                                        <strong>Upon reaching<br />20,000 participants</strong>
+                                        <div class="bg">
+                                            <img src="./assets/images/img-reward-2.jpg" alt="Premium Pack 5 , 1" />
+                                        </div>
+                                        <p>Premium Pack 5<br />1</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reward-item">
+                                        <strong>Upon reaching<br />30,000 participants</strong>
+                                        <div class="bg">
+                                            <img src="./assets/images/img-reward-3.jpg" alt="Diamonds 100" />
+                                        </div>
+                                        <p>100<br />Diamonds</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reward-item">
+                                        <strong>Upon reaching<br />50,000 participants</strong>
+                                        <div class="bg">
+                                            <img src="./assets/images/img-reward-4.jpg" alt="Premium Pack 10, 1" />
+                                        </div>
+                                        <p>Premium Pack 10<br />1</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reward-item">
+                                        <strong>Upon reaching 100,000 participants</strong>
+                                        <div class="bg">
+                                            <img src="./assets/images/img-reward-5.jpg" alt="OPEN CELEBRATION Limited Profile Set" />
+                                        </div>
+                                        <p>OPEN CELEBRATION Limited Profile Set</p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <p class="text-caution">· Pre-registration rewards available once per account.</p>
+                            <p class="text-caution">
+                                · Accumulated pre-registration rewards will be issued<br />
+                                as a coupon and announced on the official social media.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="sectionSocial" class="section section--social">
+                        <h3 class="section__title">
+                            SNS Verification<br />
+                            Event
+                        </h3>
+                        <p class="section__text">
+                            We are giving away signed polaroids<br />
+                            of ZEROBASEONE through a lottery!
+                        </p>
+                        <img src="./assets/images/img-polaroid.png" class="img-polaroid" alt="ZEROBASEONE polaroid" />
+                        <div class="social-join">
+                            <strong>How to Participate</strong>
+                            <div class="join-cont">
+                                <img src="./assets/images/img-sns.png" alt="event screenshot" />
+                                <ul>
+                                    <li>1. Capture proof of pre-registration!</li>
+                                    <li>
+                                        2. Use hashtag<br />
+                                        #PLAY_SUPERSTARWAKEONE!
+                                    </li>
+                                    <li>
+                                        3. Share your expectations for<br />
+                                        SUPERSTAR WAKEONE!
+                                    </li>
+                                </ul>
+                            </div>
+                            <p>Share these three steps on X for a chance to win a signed Polaroid from ZEROBASEONE!</p>
+                        </div>
+                        <div class="btn-wrap">
+                            <a href="#none" class="btn-certify">
+                                <span>Verify</span>
+                            </a>
+                            <a href="#none" class="btn-share" data-clipboard-text="페이지 URL">
+                                <span>Share</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gotop">
+                    <a href="#" class="gotop__link">
+                        <span class="skip">TOP</span>
+                    </a>
+                </div>
+            </div>
+            <!-- // .contents -->
+
+            <footer role="contentinfo" class="footer">
+                <div class="footer--company">
+                    <a href="https://wake-one.com/" target="_blank" class="logo__link logo__link--wo">
+                        <img src="./assets/images/img-logo-wakeone.svg" alt="wake one" />
+                    </a>
+                    <a href="https://dalcomsoft.com/html/" target="_blank" class="logo__link logo__link--dc">
+                        <img src="./assets/images/img-logo-dalcom.svg" alt="dalcom soft" />
+                    </a>
+                </div>
+
+                <div class="footer--menu">
+                    <a href="http://dalcomsoft.co.kr/ss-gidle/ss-privacy_us/" target="_blank" class="footer--menu__link">
+                        <span>Privacy Policy</span>
+                    </a>
+                </div>
+
+                <small class="footer--copyright">Copyright© 2024 DALCOMSOFT. All rights reserved.</small>
+            </footer>
+            <!-- // .footer -->
+        </div>
+
+        <!-- modal -->
+        <!-- modal - 아티스트 상세 -->
+        <div class="modal modal--artist">
+            <div class="modal__container">
+                <div class="swiper artist-detail">
+                    <div class="swiper-wrapper">
+                        <!-- 한빈 -->
+                        <div class="artist-item artist-item--hanbin">
+                            <div class="artist-frame">
+                                <div class="artist-video">
+                                    <div class="video">
+                                        <video src="./assets/video/artist/SUNG HAN BIN.mp4" muted loop autoplay playsinline></video>
+                                    </div>
+                                </div>
+                                <div class="artist-info">
+                                    <strong class="name">SUNG HAN BIN</strong>
+                                    <em class="msg">HAN BIN's special message!</em>
+                                    <p class="text">You and me, in a rhythm game! <br />Another wonderful story awaits!</p>
+                                    <div class="store">
+                                        <!-- memo - storeLink 변수를 통하여 각 스토어별 자동 링크값 설정 -->
+                                        <a href="#" target="_blank" class="download-store download-store--google" data-store="google">
+                                            <span class="btn">
+                                                <span class="google">Google Play</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" target="_blank" class="download-store download-store--app" data-store="app">
+                                            <span class="btn">
+                                                <span class="app">App Store</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 지웅 -->
+                        <div class="artist-item artist-item--jiwoong">
+                            <div class="artist-frame">
+                                <div class="artist-video">
+                                    <div class="video">
+                                        <video src="./assets/video/artist/KIM JI WOONG.mp4" muted loop autoplay playsinline></video>
+                                    </div>
+                                </div>
+                                <div class="artist-info">
+                                    <strong class="name">KIM JI WOONG</strong>
+                                    <em class="msg">JI WOONG's special message!</em>
+                                    <p class="text">
+                                        Let's see who can get 3 stars<br />
+                                        first in SUPERSTAR WAKEONE~
+                                    </p>
+                                    <div class="store">
+                                        <!-- memo - storeLink 변수를 통하여 각 스토어별 자동 링크값 설정 -->
+                                        <a href="#" target="_blank" class="download-store download-store--google" data-store="google">
+                                            <span class="btn">
+                                                <span class="google">Google Play</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" target="_blank" class="download-store download-store--app" data-store="app">
+                                            <span class="btn">
+                                                <span class="app">App Store</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 하오 -->
+                        <div class="artist-item artist-item--hao">
+                            <div class="artist-frame">
+                                <div class="artist-video">
+                                    <div class="video">
+                                        <video src="./assets/video/artist/ZHANG HAO.mp4" muted loop autoplay playsinline></video>
+                                    </div>
+                                </div>
+                                <div class="artist-info">
+                                    <strong class="name">ZHANG HAO</strong>
+                                    <em class="msg">HAO's special message!</em>
+                                    <p class="text">
+                                        Don't forget to pre-register and<br />
+                                        receive the special reward!
+                                    </p>
+                                    <div class="store">
+                                        <!-- memo - storeLink 변수를 통하여 각 스토어별 자동 링크값 설정 -->
+                                        <a href="#" target="_blank" class="download-store download-store--google" data-store="google">
+                                            <span class="btn">
+                                                <span class="google">Google Play</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" target="_blank" class="download-store download-store--app" data-store="app">
+                                            <span class="btn">
+                                                <span class="app">App Store</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 메튜 -->
+                        <div class="artist-item artist-item--matthew">
+                            <div class="artist-frame">
+                                <div class="artist-video">
+                                    <div class="video">
+                                        <video src="./assets/video/artist/SEOK MATTHEW.mp4" muted loop autoplay playsinline></video>
+                                    </div>
+                                </div>
+                                <div class="artist-info">
+                                    <strong class="name">SEOK MATTHEW</strong>
+                                    <em class="msg">MATTHEW's special message!</em>
+                                    <p class="text">
+                                        ZB1 prepared and ready to go!<br />
+                                        We will be waiting for you,<br />
+                                        ZEROSE~
+                                    </p>
+                                    <div class="store">
+                                        <!-- memo - storeLink 변수를 통하여 각 스토어별 자동 링크값 설정 -->
+                                        <a href="#" target="_blank" class="download-store download-store--google" data-store="google">
+                                            <span class="btn">
+                                                <span class="google">Google Play</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" target="_blank" class="download-store download-store--app" data-store="app">
+                                            <span class="btn">
+                                                <span class="app">App Store</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 태래 -->
+                        <div class="artist-item artist-item--taerae">
+                            <div class="artist-frame">
+                                <div class="artist-video">
+                                    <div class="video">
+                                        <video src="./assets/video/artist/KIM TAE RAE.mp4" muted loop autoplay playsinline></video>
+                                    </div>
+                                </div>
+                                <div class="artist-info">
+                                    <strong class="name">KIM TAE RAE</strong>
+                                    <em class="msg">TAE RAE's special message!</em>
+                                    <p class="text">
+                                        ZEROSE!<br />
+                                        Make sure to stick around for<br />
+                                        SUPERSTAR WAKEONE!
+                                    </p>
+                                    <div class="store">
+                                        <!-- memo - storeLink 변수를 통하여 각 스토어별 자동 링크값 설정 -->
+                                        <a href="#" target="_blank" class="download-store download-store--google" data-store="google">
+                                            <span class="btn">
+                                                <span class="google">Google Play</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" target="_blank" class="download-store download-store--app" data-store="app">
+                                            <span class="btn">
+                                                <span class="app">App Store</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 리키 -->
+                        <div class="artist-item artist-item--ricky">
+                            <div class="artist-frame">
+                                <div class="artist-video">
+                                    <div class="video">
+                                        <video src="./assets/video/artist/RICKY.mp4" muted loop autoplay playsinline></video>
+                                    </div>
+                                </div>
+                                <div class="artist-info">
+                                    <strong class="name">RICKY</strong>
+                                    <em class="msg">RICKY's special message!</em>
+                                    <p class="text">If you are ready to enjoy<br />SUPERSTAR WAKEONE, come see <br />us on the 4th of December!</p>
+                                    <div class="store">
+                                        <!-- memo - storeLink 변수를 통하여 각 스토어별 자동 링크값 설정 -->
+                                        <a href="#" target="_blank" class="download-store download-store--google" data-store="google">
+                                            <span class="btn">
+                                                <span class="google">Google Play</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" target="_blank" class="download-store download-store--app" data-store="app">
+                                            <span class="btn">
+                                                <span class="app">App Store</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 규빈 -->
+                        <div class="artist-item artist-item--gyuvin">
+                            <div class="artist-frame">
+                                <div class="artist-video">
+                                    <div class="video">
+                                        <video src="./assets/video/artist/KIM GYU VIN.mp4" muted loop autoplay playsinline></video>
+                                    </div>
+                                </div>
+                                <div class="artist-info">
+                                    <strong class="name">KIM GYU VIN</strong>
+                                    <em class="msg">GYU VIN's special message!</em>
+                                    <p class="text">
+                                        ZEROSE,<br />
+                                        show us your gaming skills in <br />SUPERSTAR WAKEONE!
+                                    </p>
+                                    <div class="store">
+                                        <!-- memo - storeLink 변수를 통하여 각 스토어별 자동 링크값 설정 -->
+                                        <a href="#" target="_blank" class="download-store download-store--google" data-store="google">
+                                            <span class="btn">
+                                                <span class="google">Google Play</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" target="_blank" class="download-store download-store--app" data-store="app">
+                                            <span class="btn">
+                                                <span class="app">App Store</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 건욱 -->
+                        <div class="artist-item artist-item--gunwook">
+                            <div class="artist-frame">
+                                <div class="artist-video">
+                                    <div class="video">
+                                        <video src="./assets/video/artist/PARK GUN WOOK.mp4" muted loop autoplay playsinline></video>
+                                    </div>
+                                </div>
+                                <div class="artist-info">
+                                    <strong class="name">PARK GUN WOOK</strong>
+                                    <em class="msg">GUN WOOK's special message!</em>
+                                    <p class="text">Let's meet in SUPERSTAR <br />WAKEONE on the 4th of <br />December!</p>
+                                    <div class="store">
+                                        <!-- memo - storeLink 변수를 통하여 각 스토어별 자동 링크값 설정 -->
+                                        <a href="#" target="_blank" class="download-store download-store--google" data-store="google">
+                                            <span class="btn">
+                                                <span class="google">Google Play</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" target="_blank" class="download-store download-store--app" data-store="app">
+                                            <span class="btn">
+                                                <span class="app">App Store</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 유진 -->
+                        <div class="artist-item artist-item--yujin">
+                            <div class="artist-frame">
+                                <div class="artist-video">
+                                    <div class="video">
+                                        <video src="./assets/video/artist/HAN YU JIN.mp4" muted loop autoplay playsinline></video>
+                                    </div>
+                                </div>
+                                <div class="artist-info">
+                                    <strong class="name">HAN YU JIN</strong>
+                                    <em class="msg">YU JIN's special message!</em>
+                                    <p class="text">
+                                        Who's up for special badges that <br />are only available in<br />
+                                        SUPERSTAR WAKEONE?
+                                    </p>
+                                    <div class="store">
+                                        <!-- memo - storeLink 변수를 통하여 각 스토어별 자동 링크값 설정 -->
+                                        <a href="#" target="_blank" class="download-store download-store--google" data-store="google">
+                                            <span class="btn">
+                                                <span class="google">Google Play</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" target="_blank" class="download-store download-store--app" data-store="app">
+                                            <span class="btn">
+                                                <span class="app">App Store</span>
+                                                <span class="text">Pre-register</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-nav">
+                        <a href="javascript:void(0);" class="swiper-nav__link swiper-nav__link--prev">
+                            <span class="skip">prev</span>
+                        </a>
+                        <a href="javascript:void(0);" class="swiper-nav__link swiper-nav__link--next">
+                            <span class="skip">next</span>
+                        </a>
+                    </div>
+                    <a href="javascript:void(0);" class="modal-close__btn">
+                        <span class="skip">close</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal - alert -->
+        <div class="modal modal--alert">
+            <div class="modal__container">
+                <div class="alert">
+                    <p class="alert__msg"></p>
+
+                    <button type="button" class="btn-confirm">
+                        <span class="text"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal - ended -->
+        <div class="modal modal--ended">
+            <div class="modal__container">
+                <div class="ended">
+                    <p class="alert__msg"></p>
+                    <!-- memo - storeLink 변수를 통하여 각 스토어별 자동 링크값 설정 -->
+                    <a href="#" type="button" class="btn-confirm btn-confirm--google" data-store="google">
+                        <span class="text"></span>
+                    </a>
+                    <a href="#" type="button" class="btn-confirm btn-confirm--app" data-store="app">
+                        <span class="text"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- memo - 참고 스크립트 -->
+    <script>
+        $(document).ready(function () {
+            const clipboardShare = new ClipboardJS('.btn-share');
+
+            // 공유하기 버튼 이벤트
+            clipboardShare.on('success', function (event) {
+                window.sswo.ui.modal.alert({
+                    textMsg: 'Pre-registration page address<br>copied to clipboard!',
+                    textConfirm: 'Confirm'
+                });
+            });
+
+            // 사전예약 종료 된 경우 modal 실행, 확인 누를 시 디바이스 storeLink로 이동
+            /* window.sswo.ui.modal.ended({
+                textMsg: 'Pre-registration has ended.',
+                textConfirm: 'Confirm'
+            }); */
+        });
+    </script>
+</html>

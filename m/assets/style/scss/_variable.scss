@@ -1,0 +1,29 @@
+/*
+    _variables.scss
+*/
+
+/* variable */
+$imagePath: './../images';
+$deviceMobileWidth: 390px;
+$maxWidth: 768px;
+$minWidth: 320px;
+$artistList: ('hanbin', 'jiwoong', 'hao', 'matthew', 'taerae', 'ricky', 'gyuvin', 'gunwook', 'yujin');
+
+// font
+%fontLangEn {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo,', Arial, Helvetica, sans-serif;
+}
+%fontLangJa {
+    font-family: 'Noto Sans JP', 'Apple SD Gothic Neo,', Arial, Helvetica, sans-serif;
+}
+%fontLangKo {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo,', Arial, Helvetica, sans-serif;
+}
+@function roundDecimals($number) {
+    @return round($number * 100) / 100;
+}
+
+@function setResMo($px) {
+    $result: roundDecimals($px / $deviceMobileWidth * 100);
+    @return #{$result}rem;
+}

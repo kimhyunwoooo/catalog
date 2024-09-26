@@ -1,0 +1,44 @@
+/*
+    _layout.scss
+*/
+
+html {
+    font-size: 1vw;
+
+    body {
+        &.scroll-hidden {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        &.page--fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    .wakeone-home {
+        position: relative;
+        min-width: $minWidth;
+        .section {
+            max-width: $maxWidth;
+            margin: 0 auto;
+        }
+    }
+}
+
+// ~ 320px
+@media screen and (max-width: $minWidth) {
+    html {
+        font-size: 3.2px;
+    }
+}
+
+// 1024px ~
+@media screen and (min-width: $maxWidth) {
+    html {
+        font-size: 7.68px;
+    }
+}
