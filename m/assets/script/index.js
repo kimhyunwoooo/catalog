@@ -88,7 +88,7 @@ function PageIndex() {
             videoElement.play();
         });
 
-        //_.element.backgroundVideo.load();
+        _.element.backgroundVideo.load();
     }
 
     // 접속 환경별 구글, 앱 스토어 버튼 노출
