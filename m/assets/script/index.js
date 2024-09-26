@@ -74,7 +74,7 @@ function PageIndex() {
     function setVideoPlay() {
         var videoElement = _.element.backgroundVideo[0];
         const videoSel = Math.floor(Math.random() * _.videoList.length);
-        console.log(videoElement);
+
         $(videoElement).attr('src', _.videoList[videoSel]);
 
         $(videoElement).on('loadedmetadata', function () {
@@ -87,8 +87,6 @@ function PageIndex() {
         $(videoElement).on('ended', function () {
             videoElement.play();
         });
-
-        _.element.backgroundVideo.load();
     }
 
     // 접속 환경별 구글, 앱 스토어 버튼 노출
