@@ -20,7 +20,9 @@ html {
     }
 
     .wakeone-home {
+        overflow: hidden;
         position: relative;
+        width: 100%;
         min-width: $minWidth;
         .section {
             max-width: $maxWidth;

@@ -77,12 +77,12 @@ function PageIndex() {
 
         $(videoElement).attr('src', _.videoList[videoSel]);
 
-        $(videoElement).on('loadedmetadata', function () {
+        $(videoElement).on('canplay', function () {
             videoElement.muted = true;
             videoElement.play();
             setTimeout(() => {
                 _.element.backgroundvideoWrap.addClass('on');
-            }, 100);
+            }, 10);
         });
         $(videoElement).on('ended', function () {
             videoElement.play();
@@ -136,16 +136,17 @@ function PageIndex() {
                 video.loop = false;
                 video.muted = true;
                 video.currentTime = 0;
+                $(video).removeClass('on');
             });
         }
     }
     // 영상 재생
     function artistPlay() {
         const video = $('.artist-item.swiper-slide-active').find('video')[0];
-        video.load();
         video.loop = true;
         video.play();
         video.muted = false;
+        $(video).addClass('on');
     }
 
     // 아티스트 오픈
@@ -309,6 +310,7 @@ function PageIndex() {
         setviewHeight();
         setStoreLink();
         setViewRewardStep();
+        onScrollWindow();
         _.element.gnbLink.on('click', onClickGnbOpened);
         _.element.gnbMenuCloseBtn.on('click', onClickGnbClosed);
         _.element.artistOpened.on('click', onClickArtistOpened);
@@ -319,7 +321,7 @@ function PageIndex() {
         _.element.gnbMenuLink.on('click', onClickGnbMenu);
 
         $(document).on('click', onClickDocument);
-        $(window).on('scroll resize load', onScrollWindow);
+        $(window).on('scroll resize', onScrollWindow);
     })();
 }
 
